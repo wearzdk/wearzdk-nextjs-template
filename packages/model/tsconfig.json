@@ -1,0 +1,21 @@
+{
+  "extends": "@repo/tsconfig/react-library.json",
+  "compilerOptions": {
+    "verbatimModuleSyntax": false,
+    "incremental": true,
+    "composite": true,
+    "moduleResolution": "bundler",
+    "module": "ES2020",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "../backend"
+    }
+  ]
+}

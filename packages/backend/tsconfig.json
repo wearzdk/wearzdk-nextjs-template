@@ -1,0 +1,16 @@
+{
+  "extends": "@repo/tsconfig/node14.json",
+  "compilerOptions": {
+    "verbatimModuleSyntax": false,
+    "incremental": true,
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

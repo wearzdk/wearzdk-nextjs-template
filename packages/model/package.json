@@ -1,0 +1,24 @@
+{
+  "name": "@repo/model",
+  "version": "0.0.0",
+  "description": "Model",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check . --apply",
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@repo/backend": "workspace:*",
+    "@repo/shared": "workspace:*",
+    "@tanstack/react-query": "4",
+    "@trpc/client": "10.45.2",
+    "@trpc/react-query": "10.45.2",
+    "hox-nextjs": "^2.1.4"
+  },
+  "exports": {
+    "./trpc": "./src/trpc.tsx"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "@repo/tsconfig/node14.json",
+  "compilerOptions": {
+    "verbatimModuleSyntax": false,
+    "incremental": true,
+    "module": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

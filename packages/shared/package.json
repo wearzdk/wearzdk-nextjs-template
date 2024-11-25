@@ -1,0 +1,20 @@
+{
+  "name": "@repo/shared",
+  "version": "0.0.0",
+  "description": "Shared",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check . --apply",
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "decimal.js": "^10.4.3",
+    "superjson": "^2.2.1"
+  },
+  "exports": {
+    "./utils/*": "./src/utils/*.ts"
+  }
+}
