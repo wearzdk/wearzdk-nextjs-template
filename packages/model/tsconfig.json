@@ -8,7 +8,7 @@
     "module": "ES2020",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@model/*": ["./src/*"]
     }
   },
   "include": ["src"],

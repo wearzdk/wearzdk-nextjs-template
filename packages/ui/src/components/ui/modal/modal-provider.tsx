@@ -3,9 +3,9 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
-import { ModalContext, ModalInnerContext } from '@/hooks/useModal';
-import { cn } from '@/lib/utils';
+} from '@ui/components/ui/dialog';
+import { ModalContext, ModalInnerContext } from '@ui/hooks/useModal';
+import { cn } from '@ui/lib/utils';
 import { Loader2 } from 'lucide-react';
 import type React from 'react';
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react';

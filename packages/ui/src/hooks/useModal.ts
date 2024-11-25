@@ -1,4 +1,4 @@
-import type { ShowModalOptions } from '@/components/ui/modal/modal-provider';
+import type { ShowModalOptions } from '@ui/components/ui/modal/modal-provider';
 import { createContext, useContext } from 'react';
 
 export const ModalContext = createContext<{

@@ -11,11 +11,11 @@ export default function Document() {
       <body className="antialiased">
         <Main />
         <NextScript />
-        <Script
+        {/* <Script
           src="https://analyze.webruix.cn/script.js"
           data-website-id="82e6eb44-0898-461d-a13b-5cbefe8a2b3f"
           strategy="lazyOnload"
-        />
+        /> */}
       </body>
     </Html>
   );

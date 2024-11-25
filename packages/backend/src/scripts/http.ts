@@ -1,4 +1,4 @@
-import { log } from '@/utils/logger';
+import { log } from '@backend/utils/logger';
 import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 const AUTH_TOKEN = 'C7R36ze';
 
