@@ -13,9 +13,9 @@
   "dependencies": {
     "@repo/backend": "workspace:*",
     "@repo/shared": "workspace:*",
-    "@tanstack/react-query": "4",
-    "@trpc/client": "10.45.2",
-    "@trpc/react-query": "10.45.2",
+    "@tanstack/react-query": "^5.66.0",
+    "@trpc/client": "^11.0.0-rc.730",
+    "@trpc/react-query": "^11.0.0-rc.730",
     "hox-nextjs": "^2.1.4"
   },
   "exports": {

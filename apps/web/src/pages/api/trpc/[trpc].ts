@@ -1,5 +1,5 @@
 import { appRouter } from '@repo/backend/api';
-import { createContext } from '@repo/backend/context';
+import { createContext } from '@repo/backend/trpc/context';
 import * as trpcNext from '@trpc/server/adapters/next';
 
 export const config = {
