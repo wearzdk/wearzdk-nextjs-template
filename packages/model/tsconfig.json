@@ -1,14 +1,15 @@
 {
   "extends": "@repo/tsconfig/react-library.json",
   "compilerOptions": {
+    "outDir": "./dist",
     "verbatimModuleSyntax": false,
     "incremental": true,
     "composite": true,
     "moduleResolution": "bundler",
-    "module": "ES2020",
+    "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@model/*": ["./src/*"]
+      "@repo/model/*": ["./src/*"]
     }
   },
   "include": ["src"],

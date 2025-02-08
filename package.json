@@ -47,5 +47,8 @@
   },
   "packageManager": "bun@1.1.34",
   "workspaces": ["apps/*", "packages/*"],
-  "trustedDependencies": ["@biomejs/biome", "esbuild", "lefthook"]
+  "trustedDependencies": ["@biomejs/biome", "esbuild", "lefthook"],
+  "dependencies": {
+    "mitt": "^3.0.1"
+  }
 }

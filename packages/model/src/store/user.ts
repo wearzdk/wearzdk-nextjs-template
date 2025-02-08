@@ -1,7 +1,7 @@
 'use client';
 
 import { createGlobalStore } from 'hox-nextjs';
-import { useCallback, useLayoutEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { setJwtToken } from '../trpc';
 import { useLocalStorage } from '../utils/use-localstorage';
 
@@ -11,17 +11,10 @@ export const [useUser] = createGlobalStore(() => {
   const jwtUserInfo = useMemo(() => jwtDecode(token), [token]);
   const { userId: uid, type: userType } = jwtUserInfo ?? {};
 
-  useLayoutEffect(() => {
-    const handleLogin = async () => {
-      if (!hasLogin) {
-      }
-      if (hasLogin) {
-        setJwtToken(token);
-      }
-    };
-
-    handleLogin();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (hasLogin) {
+      setJwtToken(token);
+    }
   }, [hasLogin, token]);
 
   const logout = useCallback(async () => {

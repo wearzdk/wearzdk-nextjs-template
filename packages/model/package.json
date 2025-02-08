@@ -19,6 +19,9 @@
     "hox-nextjs": "^2.1.4"
   },
   "exports": {
-    "./trpc": "./src/trpc.tsx"
+    "./trpc": "./src/trpc.tsx",
+    "./utils/*": "./src/utils/*.ts",
+    "./store/*": "./src/store/*.ts",
+    "./hooks/*": "./src/hooks/*.ts"
   }
 }
