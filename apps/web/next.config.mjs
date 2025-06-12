@@ -9,13 +9,11 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig = {
   transpilePackages: ['@repo/ui', '@repo/model', '@repo/backend'],
   reactStrictMode: true,
-  experimental: {
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
       },
     },
   },
