@@ -11,6 +11,7 @@ import {
 import { Button } from '@ui/components/ui/button';
 import { Input } from '@ui/components/ui/input';
 import * as React from 'react';
+import { useCallback, useRef } from 'react';
 
 export const AlertDialogContext = React.createContext<
   (
@@ -130,7 +131,7 @@ export function AlertDialogProvider({
     actionButtonVariant: 'default',
   });
 
-  const resolveRef = React.useRef<(tf: any) => void>();
+  const resolveRef = useRef<(tf: any) => void>(() => {});
 
   function close() {
     dispatch({ type: 'close' });
@@ -142,7 +143,7 @@ export function AlertDialogProvider({
     resolveRef.current?.(value ?? true);
   }
 
-  const dialog = React.useCallback(async <T extends AlertAction>(params: T) => {
+  const dialog = useCallback(async <T extends AlertAction>(params: T) => {
     dispatch(params);
 
     return new Promise<
