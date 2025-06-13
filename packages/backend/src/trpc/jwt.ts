@@ -1,20 +1,26 @@
 import process from 'node:process';
-import JWT from 'jsonwebtoken';
+import * as jose from 'jose';
 
 const JWT_SECRET = process.env.APP_JWT_SECRET || 'wearzdk-test-secret';
+const secret = new TextEncoder().encode(JWT_SECRET);
 
-export function jwtVerify<T>(token: string): Promise<T | null> {
-  return new Promise((resolve) => {
-    JWT.verify(token, JWT_SECRET, (err, decode) => {
-      if (err) resolve(null);
-      else resolve(decode as T);
-    });
-  });
+export async function jwtVerify<T = jose.JWTPayload>(
+  token: string,
+): Promise<T | null> {
+  try {
+    const { payload } = await jose.jwtVerify(token, secret);
+    return payload as T;
+  } catch (error) {
+    return null;
+  }
 }
 
-export function jwtSign(obj: object) {
-  const token = JWT.sign(obj, JWT_SECRET, {
-    expiresIn: '7d', // 7 days
-  });
+export async function jwtSign(payload: jose.JWTPayload): Promise<string> {
+  const token = await new jose.SignJWT(payload)
+    .setProtectedHeader({ alg: 'HS256' })
+    .setIssuedAt()
+    .setExpirationTime('7d') // 7 days
+    .sign(secret);
+
   return token;
 }

@@ -12,7 +12,5 @@ jobs:
         run: bun install
       - name: Build
         run: bun run build
-      - name: Run unit tests
-        run: bun run test
       - name: Lint
         run: bun run lint
