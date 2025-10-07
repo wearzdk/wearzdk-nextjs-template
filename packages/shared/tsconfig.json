@@ -1,10 +1,8 @@
 {
-  "extends": "@repo/tsconfig/node14.json",
+  "extends": "@repo/tsconfig/node22.json",
   "compilerOptions": {
     "verbatimModuleSyntax": false,
     "incremental": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
