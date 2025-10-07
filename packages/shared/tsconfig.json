@@ -4,6 +4,7 @@
     "verbatimModuleSyntax": false,
     "incremental": true,
     "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

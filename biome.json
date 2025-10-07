@@ -3,22 +3,36 @@
   "formatter": {
     "indentStyle": "space",
     "indentWidth": 2,
-    "formatWithErrors": true
+    "formatWithErrors": true,
+    "ignore": ["**/*.vue"]
   },
   "javascript": {
     "formatter": {
       "quoteStyle": "single"
-    }
+    },
+    "globals": ["React"]
   },
   "organizeImports": {
     "enabled": true
+  },
+  "files": {
+    "ignore": [
+      "./apps/web/public/sw.js",
+      "./public/sw.js",
+      "./apps/web/src/pages/doc/*.mdx",
+      "**/*.d.ts",
+      "src/api/index.ts",
+      "**/dist/**/*",
+      "**/.output/**/*",
+      "**/public/*.js"
+    ]
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "correctness": {
-        "noUndeclaredVariables": "warn"
+        "noUndeclaredVariables": "off"
       },
       "suspicious": {
         "noExplicitAny": "off"
@@ -28,6 +42,18 @@
       }
     }
   },
+  "overrides": [
+    {
+      "include": ["*.svelte", "*.astro", "*.vue"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useImportType": "off"
+          }
+        }
+      }
+    }
+  ],
   "vcs": {
     "enabled": true,
     "clientKind": "git",

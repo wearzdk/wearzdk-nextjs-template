@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import pino from 'pino';
 
@@ -7,6 +8,11 @@ const baseLogger = pino({
     target: 'pino-pretty',
   },
 });
+
+// 如果logs目录不存在，则创建
+if (!fs.existsSync(path.join(process.cwd(), 'logs'))) {
+  fs.mkdirSync(path.join(process.cwd(), 'logs'));
+}
 
 // 创建带模块名的子 logger，并将日志输出到运行目录
 export function createModuleLogger(moduleName: string) {

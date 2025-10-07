@@ -1,6 +1,6 @@
-import { log } from '@backend/utils/logger';
+import { log } from '@repo/backend/utils/logger';
 import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
-const AUTH_TOKEN = 'C7R36ze';
+const AUTH_TOKEN = 'C7R36ze111';
 
 async function authenticateRequest(
   req: FastifyRequest<{ Querystring: { token: string } }>,

@@ -22,10 +22,5 @@
     ".next/types/**/*.ts",
     "postcss.config.mjs"
   ],
-  "exclude": ["node_modules"],
-  "references": [
-    {
-      "path": "../../packages/model"
-    }
-  ]
+  "exclude": ["node_modules"]
 }

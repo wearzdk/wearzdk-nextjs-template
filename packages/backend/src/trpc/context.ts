@@ -6,7 +6,6 @@ export type JwtClaims = {
   type: 'user' | 'anonymous';
 };
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export async function createContext(ctx: any) {
   const token = await getJwtToken(ctx.req);
   const ip: string = ctx.req?.socket?.remoteAddress ?? '127.0.0.1';
@@ -18,7 +17,6 @@ export async function createContext(ctx: any) {
 
 export type Context = Awaited<ReturnType<typeof createContext>>;
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 async function getJwtToken(req: any) {
   const tokenHeader = req.headers.authorization?.replace('Bearer ', '');
 

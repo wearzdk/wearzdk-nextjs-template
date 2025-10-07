@@ -1,4 +1,5 @@
-import { trpc, trpcNormal } from '@repo/model/trpc';
+import { useTRPC } from '@/utils/trpc';
+import { useQuery } from '@tanstack/react-query';
 import { useAlert } from '@ui/components/alert-dialog-provider';
 import { Button } from '@ui/components/ui/button';
 import { useModal } from '@ui/hooks/useModal';
@@ -7,9 +8,12 @@ import Head from 'next/head';
 export default function Home() {
   const alert = useAlert();
   const modal = useModal();
-  const { data } = trpc.hello.hello.useQuery({
-    name: 'World',
-  });
+  const trpc = useTRPC();
+  const { data } = useQuery(
+    trpc.hello.hello.queryOptions({
+      name: 'World',
+    }),
+  );
 
   function handleAlert() {
     alert({
