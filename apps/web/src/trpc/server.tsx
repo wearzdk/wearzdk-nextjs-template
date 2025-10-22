@@ -39,6 +39,22 @@ export const trpcServer = createTRPCOptionsProxy({
   router: appRouter,
   queryClient: getQueryClient,
 });
+
+// export const getTrpcCaller = cache(async () => {
+//   return appRouter.createCaller(
+//     await createContext({
+//       req: {
+//         headers: {
+//           authorization: '',
+//         },
+//         socket: {
+//           remoteAddress: '127.0.0.1',
+//         },
+//       },
+//     }),
+//   );
+// });
+
 // If your router is on a separate server, pass a client:
 // createTRPCOptionsProxy({
 //   client: createTRPCClient({
