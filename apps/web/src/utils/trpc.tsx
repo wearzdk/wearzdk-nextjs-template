@@ -1,3 +1,5 @@
+'use client';
+
 import type { AppRouter } from '@repo/backend/api';
 import superjson from '@repo/shared/utils/superjson';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -28,7 +30,7 @@ export function getBaseUrl() {
   if (typeof window !== 'undefined') {
     if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
     if (process.env.NODE_ENV === 'development') {
-      return 'http://localhost:3001';
+      return '/api';
     }
     return 'https://api.xxx.zone';
   }

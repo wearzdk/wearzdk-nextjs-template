@@ -1,3 +1,5 @@
+'use client';
+
 import type { TRPCClientErrorLike } from '@trpc/client';
 import type { UseTRPCQueryResult } from '@trpc/react-query/shared';
 import type { AnyRouter } from '@trpc/server';
