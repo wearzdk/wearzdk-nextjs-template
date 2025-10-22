@@ -34,9 +34,11 @@ export function getBaseUrl() {
     if (process.env.NODE_ENV === 'development') {
       return '/api';
     }
-    return '/api';
+    if (window.location.hostname.includes('vercel')) return '/api';
+    if (window.location.hostname.includes('pages.dev')) return '/api';
+    return 'http://localhost:3001';
   }
-  return '/api';
+  return 'http://localhost:3001';
 }
 const URL = `${getBaseUrl()}/trpc`;
 
