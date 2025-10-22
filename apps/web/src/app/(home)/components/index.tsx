@@ -1,12 +1,12 @@
 'use client';
 
-import { useTRPC } from '@/utils/trpc';
+import { useTRPC } from '@/trpc/client';
 import { useQuery } from '@tanstack/react-query';
 import { useAlert } from '@ui/components/alert-dialog-provider';
 import { Button } from '@ui/components/ui/button';
 import { useModal } from '@ui/hooks/useModal';
 
-export default function Home() {
+export function HomePageImpl() {
   const alert = useAlert();
   const modal = useModal();
   const trpc = useTRPC();
@@ -40,7 +40,6 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-gray-600">{data || 'Loading...'}</p>
-
           <div className="flex gap-4 justify-center">
             <Button variant="default" size="lg" onClick={handleAlert}>
               Alert
