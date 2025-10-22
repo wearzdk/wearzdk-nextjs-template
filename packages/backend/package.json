@@ -32,6 +32,7 @@
     "./utils/*": "./src/utils/*.ts"
   },
   "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
     "esbuild": "^0.25.10"
   }
 }
