@@ -19,6 +19,7 @@
   "dependencies": {
     "@repo/backend": "workspace:*",
     "@repo/ui": "workspace:*",
+    "@repo/shared": "workspace:*",
     "@tanstack/react-query": "^5.90.2",
     "@trpc/client": "^11.6.0",
     "@trpc/react-query": "^11.6.0",
@@ -32,6 +33,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@trpc/server": "^11.6.0",
     "@repo/tsconfig": "workspace:*",
     "@next/bundle-analyzer": "^15.5.4",
     "@types/node": "^24.7.0",
